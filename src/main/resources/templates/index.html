@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+    <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+        
+        
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div >   
+            <div >  <button class="btn_s"> <h1><a href="reg">WELCOME</a></h1></button></div>    
+            <div class="mf">
+                <div > 
+                    <ul>
+                        <li th:each = "film : ${Film}">
+                            <a th:href="@{/update/{id}(id=${film.id})}">
+                                <span th:text="${film.name}"></span>
+                                <span>Редактировать</span>
+                            </a>
+                        </li>
+                    </ul>
+                <div><button class="btn_s"> <h1><a href="https://iss.moex.com/iss/securities.xml?q=GAZP&iss.meta=off&group_by_filter=commor_share ">акции</a></h1></button></div>
+            <!-- <div><button class="btn_s"> <h1>рандомное число</h1></button></div> -->
+       
+            </div>
+        </div>
+    </div>
+    
+
+
+    
+</body>
+</html>

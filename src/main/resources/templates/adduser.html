@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+    
+    <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form action="#" th:action="@{/reg}" th:object="${user}" method="post">
+            <h1>РЕГИСТРАЦИЯ</h1>
+            <div><input class="text-class" name="name" type="text" placeholder="Введи логин"></div>
+            <div><input class="text-class" name="password" type="text" placeholder="Введи пароль"></div>
+            <div><input class="text-class" name="email" type="text" placeholder="Введи email"></div>
+            <div><input class="text-class" name="number" type="text" placeholder="Введи телефон"></div>
+            <div><button class="btn_s"><h1><a href="/">вернуться</a></h1></button>
+            <button class="btn_s"  type="submit"><h1>Добавить</h1></button>
+            </div>            
+        </form>
+    </div>    
+</body>
+</html>
