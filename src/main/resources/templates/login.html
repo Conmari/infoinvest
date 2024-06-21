@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+    <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+    <title>Document</title>
+</head>
+<body class="login-page">
+    <div class="container">
+        <div class="centered">
+            <div >  <h1>Добро пожаловать в систему</h1></div>    
+            <div >  <h1>Требуется авторизация</h1></div>   
+           
+            <form th:action="@{/login}" method="post">
+                <div  class="error-message" th:if="${loginError}"  th:text="${loginError}" >Неверный логин или пароль</div>
+                <div class="input-box"><input class="text-class" name="username" type="text" placeholder="Логин "></div>
+                <div  class="input-box"><input class="text-class" name="password" type="password" placeholder="Пароль"></div>
+               
+                <button class="btn_s " type="submit">Войти</button>
+                <button class="btn_s " type="submit"> <h1><a href="reg">Зарегистрироваться</a></h1></button>                
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

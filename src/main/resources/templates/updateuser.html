@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+        lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />    
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="centered">
+            <form action="#"   method="post" enctype="multipart/form-data"
+            th:action="@{/update/{id}(id=${user.id})}"
+            th:object="${user}">
+            <h1 sec:authorize="hasRole('ROLE_USER')">Информация</h1>
+            <h1 sec:authorize="hasRole('ROLE_ADMIN')">Редактирование</h1>
+                <div><input class="text-class" th:field="*{username}" type="text" placeholder="Введи логин" required th:oninvalid="this.setCustomValidity('Пожалуйста, введите ваш логин')" oninput="this.setCustomValidity('')"></div>
+                <div><input class="text-class" th:field="*{password}" type="password" placeholder="Введи пароль" required th:oninvalid="this.setCustomValidity('Пожалуйста, введите ваш пароль')" oninput="this.setCustomValidity('')"></div>
+                <div><input class="text-class" th:field="*{email}" type="text" placeholder="Введи email" required th:oninvalid="this.setCustomValidity('Пожалуйста, введите ваш email')" oninput="this.setCustomValidity('')"></div>
+                <div><input class="text-class" th:field="*{number}" type="text" placeholder="Введи телефон" required th:oninvalid="this.setCustomValidity('Пожалуйста, введите ваш телефон')" oninput="this.setCustomValidity('')"></div>
+                
+                <div>
+                    <button class="btn_s"><h1><a href="/">вернуться</a></h1></button>                    
+                    <div sec:authorize="hasAnyRole('ROLE_ADMIN')">
+                        <button class="btn_s" type="submit">Обновить</button>   
+                        <button class="btn_s"><a th:href="@{/delete/{id}(id=${user.id})}" type="submit">Удалить</a></button> 
+                    </div>
+                </div>            
+            </form>
+        </div>
+    </div>    
+</body>
+</html>

@@ -25,24 +25,38 @@ body{
     /*color: aliceblue;*/    
 }
 .container {
-    min-width: 100vw;
+    min-width: 50vw;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center 
 }
+.tr{
+    display: flex;    
+    justify-content: space-between;
+}
+
+.tr .btn_s{
+    flex: 1;
+    min-width: 320px;
+    text-align: center;
+    /* width: 400px; */
+}
+
 .btn_s{
     background-color: var(--color-background);
     padding: 8px;
     border-radius: 1rem;
-    width: 100vw;
-    /* width: 100%; */
+    /* width: 100vw; */
+    width: 100%;
     margin-bottom: 8px;
 }
 .btn_s a{
     display: block;
 }
-
+.login-page .btn_s{
+    width: 100%;
+}
 .text-class{
     width: 100%;
     height: 100%;
@@ -54,7 +68,7 @@ body{
     color: #e617e6;
     font-weight: 600;
     padding: 8px 35px 7px 15px;
-    margin: 5px;
+    margin: 5px auto;
     /* border-radius: 10px; */
 }
 .text-class:focus{
@@ -68,7 +82,7 @@ body{
     color: #e617e6;
     font-weight: 600;
     padding: 8px 35px 7px 15px;
-    margin: 5px;
+    margin: 5px auto;
     /* border-radius: 10px; */
 }
 ul {
@@ -81,20 +95,16 @@ ul {
     justify-content: center;
     align-items: center;
     /* margin-left: 4%; */
+    
 }
 Ul li {
-    
-    height: calc(100vh - 70vh);
-    /* min-height:30vh; */
-    width: calc(100vw - 75vw);
-    max-width: 20vw;
-    margin: 15px 0;
+    width: 400px;
+    height: 200px;    
     padding: 8px 8px 7px 8px;
     outline: 2px solid var(--color-element);
     border-radius: 2rem;
-    /* flex-grow: 1;
-    flex-basis: content; */
     margin: 20px 25px;
+    
 }
 
 Ul li a {
@@ -106,4 +116,16 @@ Ul li a {
 }
 Ul li a span{
     color: #fc0; /* Цвет ссылки */
+}
+
+.centered {
+    text-align: center; /* Выравнивание текста по центру */
+    margin: 0 auto; /* Автоматические отступы для выравнивания блока по центру */
+    white-space: normal; /* Перенос текста на новую строку */
+  }
+
+.error-message {
+    color: color-mix(in srgb, var(--color-element) 60%, white);
+    text-shadow: 0 0 10px var(--color-element);
+    margin: 25px 0 0 0;
 }
